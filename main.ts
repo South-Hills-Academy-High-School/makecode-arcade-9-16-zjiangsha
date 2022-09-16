@@ -123,3 +123,10 @@ game.onUpdate(function () {
     snakeheadx += updatevx
     snakeheady += updatevy
 })
+game.onUpdate(function () {
+    for (let value of snakebody) {
+        if (!(value == snakebody[0]) && snakehead.overlapsWith(value)) {
+            game.over(false)
+        }
+    }
+})
